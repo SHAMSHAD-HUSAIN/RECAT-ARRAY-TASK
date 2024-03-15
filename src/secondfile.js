@@ -4,6 +4,7 @@
 //please uncomment  file if it comment  in app file for answer 
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function SecondArray() {
   const initialArray = [1, 8, 9, 6, 3, 7, 5];
@@ -23,11 +24,27 @@ function SecondArray() {
     return () => clearInterval(interval);
   }, [currentIndex]);
   return (
-    <div>
+    <>
+    <div style={{marginLeft:"40px"}}>
+      <div   style={{marginTop:"40px"}}>
+        <p>
+       Quetion no2: const Array = [1, 8, 9, 6, 3, 7, 5],
+
+and print each value of Array after 2 sec.
+        </p>
+      </div>
+    <div style={{height:"300px"}}>
       {finalArray.map((element, index) => (
         <h3 key={index}>{element} </h3>
       ))}
     </div>
+       <div>
+       <Link to="/" ><button>view first answer</button></Link>
+   </div>
+    </div>
+    
+    </>
+  
   );
 }
 
